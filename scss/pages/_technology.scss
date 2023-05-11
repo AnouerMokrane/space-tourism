@@ -1,0 +1,201 @@
+@use "../abstracts/" as *;
+
+/* start destination */
+.technology {
+  text-align: center;
+  color: $white;
+  overflow: hidden;
+  .main-title {
+    span {
+      font-weight: bold;
+      color: rgba($white, 25%);
+      margin-right: 12px;
+    }
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 2.7px;
+    text-transform: uppercase;
+  }
+  .row {
+    margin-top: 32px;
+    .img {
+      position: relative;
+      left: -24px;
+      width: calc(100% + 51px);
+      img {
+        display: block;
+        max-width: 100%;
+      }
+      .big {
+        display: none;
+      }
+    }
+    .content {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+
+      .bullets {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 30px;
+        > span {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 40px;
+          height: 40px;
+          font-size: 16px;
+          border: 1px solid $gray;
+          border-radius: 50%;
+          cursor: pointer;
+          transition: 0.4s;
+          &:hover {
+            border-color: $white;
+          }
+          &.active {
+            color: black;
+            background-color: $white;
+          }
+        }
+      }
+      .tech-title {
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 2.36px;
+        color: $primary-color;
+        margin-bottom: 10px;
+      }
+      .tech-name {
+        font-size: 24px;
+        font-weight: 400;
+        font-family: $ff-bellefair;
+        text-transform: uppercase;
+        margin: 0px 0 10px;
+      }
+      .tech-description {
+        font-size: 15px;
+        font-family: $ff-barlow-two;
+        color: rgba($primary-color, 0.5);
+        line-height: 1.6;
+        margin: 5px 0 0;
+      }
+    }
+  }
+}
+
+//tablet
+.technology {
+  @include breakpoint(small) {
+    .main-title {
+      font-size: 20px;
+      text-align: left;
+      letter-spacing: 3.38px;
+      margin: 40px 40px 50px;
+    }
+    .container {
+      padding-left: 155px;
+      padding-right: 155px;
+    }
+    .row {
+      .img {
+        position: relative;
+        left: -154px;
+        width: calc(100% + 310px);
+        img {
+          object-fit: contain;
+          display: block;
+          max-width: 100%;
+        }
+        .big {
+          display: none;
+        }
+      }
+      .content {
+        margin-top: 10px;
+        .bullets {
+          margin-top: 55px;
+          margin-bottom: 45px;
+          > span {
+            font-size: 25px;
+            width: 58px;
+            height: 58px;
+          }
+        }
+        .tech-title {
+          font-size: 16px;
+          margin-bottom: 20px;
+        }
+        .tech-name {
+          font-size: 40px;
+          margin-bottom: 20px;
+        }
+        .tech-description {
+          font-size: 16px;
+          line-height: 1.7;
+        }
+      }
+    }
+  }
+}
+
+//desktop
+.technology {
+  @include breakpoint(large) {
+    text-align: left;
+    .main-title {
+      font-size: 28px;
+      letter-spacing: 4.72px;
+      margin-top: 76px;
+      margin-left: 55px;
+    }
+    .row {
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse;
+      margin-top: 0;
+      .img {
+        position: relative;
+        left: 165px;
+        width: 507px;
+        .small {
+          display: none;
+        }
+        .big {
+          display: block;
+          height: 527px;
+        }
+      }
+      .content {
+        display: flex;
+        flex-direction: row;
+        flex-basis: 58%;
+        .bullets {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 30px;
+          margin-right: 70px;
+          > span {
+            width: 80px;
+            height: 80px;
+            font-size: 22px;
+          }
+        }
+        .tech-title {
+          display: block;
+          font-size: 16px;
+          letter-spacing: 2.7px;
+          width: 120px;
+        }
+        .tech-name {
+          font-size: 56px;
+        }
+        .tech-description {
+          font-size: 19px;
+        }
+      }
+    }
+  }
+}

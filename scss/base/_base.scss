@@ -1,0 +1,88 @@
+@use "../abstracts/" as *;
+html {
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  //font-family: $ff-bellefair;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 16px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+//home page backgrounds
+/* home page backgrounds */
+.home-body {
+  background-image: url("../assets/home/background-home-mobile.jpg");
+
+  @include breakpoint(small) {
+    background-image: url("../assets/home/background-home-tablet.jpg");
+    background-size: cover;
+  }
+  @include breakpoint(large) {
+    background-image: url("../assets/home/background-home-desktop.jpg");
+  }
+}
+
+//destination page backgrounds
+/* destination page backgrounds */
+.destination-page {
+  background-image: url("../assets/destination/background-destination-mobile.jpg");
+  @include breakpoint(small) {
+    background-image: url("../assets/destination/background-destination-tablet.jpg");
+    background-size: cover;
+  }
+  @include breakpoint(large) {
+    background-image: url("../assets/destination/background-destination-desktop.jpg");
+  }
+}
+
+//crew page backgrounds
+/* crew page backgrounds */
+.crew-page {
+  background-image: url("../assets/crew/background-crew-mobile.jpg");
+  @include breakpoint(small) {
+    background-image: url("../assets/crew/background-crew-tablet.jpg");
+    background-size: cover;
+  }
+  @include breakpoint(large) {
+    background-image: url("../assets/crew/background-crew-desktop.jpg");
+  }
+}
+//technology page backgrounds
+/* technology page backgrounds */
+.technology-page {
+  background-image: url("../assets/technology/background-technology-mobile.jpg");
+  @include breakpoint(small) {
+    background-image: url("../assets/technology/background-technology-tablet.jpg");
+    background-size: cover;
+  }
+  @include breakpoint(large) {
+    background-image: url("../assets//technology/background-technology-desktop.jpg");
+  }
+}

@@ -1,0 +1,125 @@
+@use "../abstracts/" as *;
+
+/* start home */
+.home {
+  color: $white;
+  text-align: center;
+
+  .info {
+    margin-top: 48px;
+    margin-bottom: 80px;
+    h1 {
+      font-size: 16px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 2.7px;
+      color: $primary-color;
+      span {
+        display: block;
+        font-family: $ff-bellefair;
+        font-size: 80px;
+        color: $white;
+        margin-top: 25px;
+      }
+    }
+    p {
+      font-family: "Barlow", sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      color: $primary-color;
+      line-height: 1.7;
+    }
+  }
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    background-color: $white;
+    color: #0b0d17;
+    border-radius: 50%;
+    margin: auto;
+    font-size: 20px;
+    font-family: $ff-bellefair;
+    text-transform: uppercase;
+    letter-spacing: 1.25px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0%;
+      height: 0%;
+      background-color: #9797979a;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      z-index: -1;
+      transition: 0.4s;
+    }
+    &:hover::before {
+      width: 150%;
+      height: 150%;
+    }
+  }
+}
+
+//tablet
+.home {
+  @include breakpoint(small) {
+    .info {
+      margin-top: 105px;
+      margin-bottom: 155px;
+      h1 {
+        font-size: 20px;
+        span {
+          font-size: 150px;
+        }
+      }
+      p {
+        font-size: 16px;
+      }
+    }
+    .btn {
+      width: 242px;
+      height: 242px;
+      font-size: 32px;
+    }
+  }
+}
+
+//desktop
+.home {
+  @include breakpoint(large) {
+    text-align: left;
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 185px;
+    }
+    .info {
+      flex-basis: 40%;
+      h1 {
+        margin: 10px 0;
+        font-size: 28px;
+        span {
+          font-size: 150px;
+          margin-bottom: 25px;
+        }
+      }
+      p {
+        font-size: 18px;
+      }
+    }
+    .btn {
+      width: 274px;
+      height: 274px;
+      font-size: 32px;
+    }
+    .explore-btn {
+      margin-top: 90px;
+    }
+  }
+}

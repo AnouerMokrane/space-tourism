@@ -1,0 +1,207 @@
+@use "../abstracts/" as *;
+
+/* start destination */
+.destination {
+  text-align: center;
+  color: $white;
+  .main-title {
+    span {
+      font-weight: bold;
+      color: rgba($white, 25%);
+      margin-right: 12px;
+    }
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 2.7px;
+    text-transform: uppercase;
+  }
+
+  .row {
+    margin-top: 32px;
+    .img {
+      img {
+        width: 170px;
+        height: 170px;
+        animation: rotate 10s linear infinite;
+      }
+    }
+    .content {
+      .dest-list {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        padding: 0;
+        li {
+          font-size: 14px;
+          letter-spacing: 2.36px;
+          text-transform: uppercase;
+          color: $primary-color;
+          padding: 8px 0;
+          cursor: pointer;
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            transition: 0.4s;
+          }
+          &:not(.active):hover::before {
+            background-color: $gray;
+            width: 100%;
+          }
+          &.active::before {
+            background-color: $white;
+            color: $white;
+            width: 100%;
+          }
+        }
+      }
+
+      .info {
+        border-bottom: 1px solid #383b4b;
+        padding-bottom: 16px;
+        .dest-name {
+          font-family: $ff-bellefair;
+          font-size: 56px;
+          font-weight: 400;
+          text-transform: uppercase;
+          margin: 32px 0 0px;
+        }
+        .dest-description {
+          font-size: 15px;
+          font-family: $ff-barlow-two;
+          color: $primary-color;
+          line-height: 1.7;
+          margin-top: 0;
+        }
+      }
+      .details {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding-top: 16px;
+        padding-bottom: 55px;
+        > div {
+          h3 {
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 2.36px;
+            color: $primary-color;
+          }
+          p {
+            font-size: 28px;
+            font-family: $ff-bellefair;
+            text-transform: uppercase;
+            margin: 5px 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+//tablet
+.destination {
+  @include breakpoint(small) {
+    .main-title {
+      font-size: 20px;
+      text-align: left;
+      letter-spacing: 3.38px;
+      margin: 40px 40px 50px;
+    }
+    .container {
+      padding-left: 98px;
+      padding-right: 98px;
+    }
+    .row {
+      .img {
+        img {
+          width: 300px;
+          height: 300px;
+        }
+      }
+      .content {
+        .dest-list {
+          margin: 55px 0;
+        }
+        .info {
+          padding-bottom: 22px;
+          .dest-name {
+            font-size: 80px;
+          }
+          .dest-description {
+            font-size: 16px;
+          }
+        }
+        .details {
+          flex-direction: row;
+          justify-content: space-evenly;
+        }
+      }
+    }
+  }
+}
+
+//desktop
+.destination {
+  @include breakpoint(large) {
+    text-align: left;
+    .main-title {
+      font-size: 28px;
+      letter-spacing: 4.72px;
+      margin-top: 76px;
+      margin-left: 55px;
+    }
+    .row {
+      display: flex;
+      align-items: center;
+      margin-left: 69px;
+      .img {
+        margin-right: 155px;
+        position: relative;
+        img {
+          width: 445px;
+          height: 445px;
+        }
+      }
+      .content {
+        flex-basis: 50%;
+        .dest-list {
+          justify-content: flex-start;
+          gap: 33px;
+          li {
+            font-size: 16px;
+            letter-spacing: 2.7px;
+            padding: 12px 0;
+          }
+        }
+        .info {
+          padding-bottom: 40px;
+          .dest-name {
+            font-size: 100px;
+          }
+          .dest-description {
+            font-size: 18px;
+          }
+        }
+        .details {
+          flex-direction: row;
+          gap: 57px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
